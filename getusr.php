@@ -1,6 +1,6 @@
 <?php
 include "h.php";
-$cookieexp = time()+3600*24*30*365;
+$cookieexp = time()+3600*24*30*12;
 $id = count(scandir("data/"))-1;
 file_put_contents("data/".$id, "[]");
 echo '{"'.$id.'":';
