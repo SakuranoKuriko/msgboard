@@ -801,12 +801,14 @@ var disableBgColor = "#ddd";
 var editbak = {};
 var e=false;
 time = new Date().getTime();
-function addCookie(objName, objValue, objExp){
+function addCookie(objName, objValue, objExp, onroot){
   var ms = objExp||3600*34*30*1000;
   var str = objName + "=" + escape(objValue);
   var date = new Date();
   date.setTime(date.getTime() + ms);
-  str += "; expires=" + date.toGMTString() + "; path=/";
+  str += "; expires=" + date.toGMTString();
+  if (onroot)
+    set += "; path=/";
   document.cookie = str;
 }
 function addInfCookie(objName, objValue){
